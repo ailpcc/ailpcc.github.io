@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+
+}
+#title-li{
+	background-color:rgb(177,231,213);
+	width:100%;
+	height:10%;
+	box-sizing:border-box;
+	position: relative;
+	font-family:Microsoft YaHei UI Light;
+}
+.font-a{
+	color:rgb(0,0,0);
+}
+#font-h1{
+	margin-left:1%;
+	margin-top:0px;	
+	height:5%;
+	color:rgb(0,0,0)
+}
+#font-p0{
+	width:auto;
+	height:5%;
+	margin-left:3%;
+	margin-top:0.3%;	
+	color:rgb(0,0,0)
+}
+#body-a{
+	width:90%;
+	height:90%;
+	background-color:rgb(204,204,204);
+}
+a{
+	text-decoration:none;/*去掉A标签的下划线*/
+	color:rgb(0,0,0)
+}
+#img{
+	border-radius:12px;
+}
