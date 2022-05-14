@@ -1,0 +1,9 @@
+User-agent: *
+Allow:/
+Disallow: .jpg$
+Disallow: .mp3$
+Disallow: .pdf$
+Disallow: .ttf$
+Disallow: .txt$
+Disallow: /blog
+Disallow: /file
