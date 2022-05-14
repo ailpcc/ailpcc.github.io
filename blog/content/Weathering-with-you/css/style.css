@@ -1,0 +1,19 @@
+#body{
+	color:rgb(4,25,1)
+}
+p{
+	color:rgb(255,255,255);
+	text-align:center;
+	font-family:Microsoft YaHei UI Light;
+	font-size:25px;
+}
+#video-1{
+	width:100%;
+	height:520px;
+}
+#audio{
+	text-align:center;
+}
+#audio-1{
+	width:100%;
+}
