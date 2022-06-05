@@ -29,33 +29,11 @@
 		@font-face{font-family:迷你简家书;
 		src:url('file/迷你简家书.TTF');}
 	</style>
-	<script>
-        $(document).ready(function() {
-            var stars = 1024; /*星星的密集程度，数字越大越多*/
-            var $stars = $(".stars");
-            var r = 900; /*星星的看起来的距离,值越大越远,可自行调制到自己满意的样子*/
-            for (var i = 0; i < stars; i++) {
-                var $star = $("<div/>").addClass("star");
-                console.log($star)
-                $stars.append($star);
-            }
-            $(".star").each(function() {
-                var cur = $(this);
-                var s = 0.2 + (Math.random() * 1);
-                var curR = r + (Math.random() * 300);
-                cur.css({
-                    transformOrigin: "0 0 " + curR + "px",
-                    transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) + "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
-
-                })
-            })
-        })
-    </script>
+	
 	
 </head>
 <body>
 <!--<P>如果你看到了这个文本-说明你的浏览器不兼容</P>-->
-<div class="stars"></div>
 <div class="li-head">
 	<header id="header" class="header">
 		<div class="w1200">
