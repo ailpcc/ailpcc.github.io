@@ -1,0 +1,50 @@
+body{
+	background:rgb(207,225,194);
+	verflow:hidden;
+	}
+a{
+	text-decoration:none;
+	color:rgb(0,0,0);
+	
+	}
+p{
+	text-align:center
+	}
+#mtakl{
+	width:50%;
+	height:60%;
+	background:rgb(243,205,216);
+	position:absolute; 
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius:10px;
+	opacity:0.6;
+	
+}
+#iot-line{
+	background:rgb(255,255,255);
+	opacity:0.8;
+	width:150px;
+	height:65px;
+	margin:0 auto;
+	border-radius:20px;
+	
+	
+}
+#iot-line p{
+	padding:20px 0;
+	text-align:center;
+}
+#about-text{
+	
+	width:auto;
+	height:auto;
+	text-align:center;
+}
+#a-detailed{
+	color:rgb(129,106,232);
+	
+}
