@@ -1,0 +1,51 @@
+*{
+	margin:0;
+	padding:0;
+	}
+	
+a{
+	text-decoration:none;/*去掉A标签的下划线*/
+	color:rgb(0,0,0);
+	}
+li{
+
+}
+ul{ 
+
+}
+#line{
+	width:100%;
+	height:1px;
+	background:red;
+}
+#line-2{
+	background-color:rgb(255,255,255);
+	width:100%;
+	height:3px;
+}
+#font{
+	padding:0 2% 0 ;
+	font-size:25px;
+	margin-right:20px;
+	font-family:Microsoft YaHei UI Light;
+	margin-top:2px;
+	width:95%;
+	height:35px;
+	
+}
+#body-diary{
+	background-color:rgb(232,232,232);
+	width:75%;
+	padding:0 25px 25px 25px;
+	margin-top:5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+h2{
+	font-family:Microsoft YaHei UI Light;
+	text-align:center;
+	height:10%;
+}
+#body-title{
+	height:10%
+}

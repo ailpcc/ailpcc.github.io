@@ -1,0 +1,91 @@
+*{
+	margin:0;
+	padding:0;
+}
+	
+a{
+	text-decoration:none;/*去掉A标签的下划线*/
+	color:rgb(0,0,0);
+	}
+#li-head{
+
+	background-color:rgb(2,129,255);
+	
+}
+#line{
+
+	
+}
+#h1-div{
+	height:45px;
+	
+}
+h1{
+	font-family:迷你简家书;
+	height:45px;
+	text-align:left;
+	margin-left:15px;
+	padding-top: 10px ;
+	
+}
+#back-p{
+	font-family:迷你简家书;
+	height:45px;
+	text-align:left;
+	padding:0;
+	margin-left:15px;
+}
+#content{
+	margin-top:35px;
+	padding:0 25px;
+	text-align:left;
+}
+#content-short{
+	height:15%;
+	width:100%;
+	margin:auto;
+	background-color:rgb(229,229,229);
+	text-align:center;
+	margin-top:10px;
+}
+#type-sticky{
+	color:red;
+	font-family:迷你简家书;
+	font-size:10px;
+	text-align:left;
+}
+#author-p{
+	text-align:left;
+	padding:3px 5px
+}
+/*#copyright{
+	margin-top:10px;
+	width:100%;
+	text-align:center;
+	font-size:15px;
+	height:3%;
+	background-color:rgb(93,93,93);
+	position:fixed;
+	bottom:0;
+
+}
+#copyright p{
+	margin-top:;
+}*/
+#submit{
+	font-family:迷你简家书;
+	font-size:15px;
+	position:absolute;
+	margin-top:20px;
+
+	height:20px;
+	background-color:rgb(255,100,25)
+}
+
+#content iframe{
+	align:bottom;
+	frameborder:0;
+}
+*on-body-short{
+	
+}

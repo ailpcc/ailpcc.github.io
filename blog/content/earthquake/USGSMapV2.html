@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>USGSMapV2</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <style>
+        html, body {
+			height: 100%;
+			margin: 0;
+		}
+		.leaflet-container {
+			height: 400px;
+			width: 600px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+        .mapboxgl-popup-content {padding:10px; background:rgba(0,0,0,0.75); color:#fff; pointer-events:none; opacity: 0.7;}
+        .scroller{
+            position:absolute;
+            top:87px;
+            bottom:0px;
+            overflow:scroll;
+        }
+        .mapboxgl-popup-anchor-bottom {margin-top:-10px;}
+        .mapboxgl-popup-anchor-top {margin-top:10px;}
+        .mapboxgl-popup-anchor-left {margin-right:-10px;}
+        .mapboxgl-popup-anchor-right {margin-right:10px;}
+
+        .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {border-top-color:rgba(0,0,0,0.75); }
+        .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {border-bottom-color:rgba(0,0,0,0.75); }
+        .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {border-right-color:rgba(0,0,0,0.75);}
+        .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {border-left-color:rgba(0,0,0,0.75);}
+
+        .mapboxgl-ctrl-group {
+            -webkit-filter: invert(100%);
+        }
+        .mapboxgl-popup {pointer-events:none;}
+        h1.mag {
+            margin-right:10px;
+            color:steelblue;
+        }
+    </style>
+</head>
+<body>
+
+<div id='map' style="width: 904px; height: 650px;"></div>
+
+<script>
+
+    // popup
+    //     .setLngLat(coords)
+    //     .setHTML('<h2 class="fl mag">'+feature.properties.mag.toFixed(1)+'</h2>'+feature.properties.place+'<br><span class="italic block translucent">'+feature.properties.depth+' km depth ('+ expressTime(feature.properties.time)[0]+' '+expressTime(feature.properties.time)[1]+' ago)</span>')
+    //     .addTo(map);
+    //
+    // var coords = feature.geometry.coordinates.map(function(num){
+    //     if (num>180) return num%180
+    //     else return num
+    // });
+
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicHBxdWFrZSIsImEiOiJja3pwOXd2Z2w1eTBkMnFwcnc5c3ByYjJqIn0.EWTHDE0h0a100w8qbrf5Rg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/ppquake/ckzr7jkiu002a14pa4beb6mno',
+center: [104.04, 30.39],
+zoom: 3
+});
+
+    var a = 104.04
+    var b = 30.39
+    var marker2 = new mapboxgl.Marker({ color: 'red', scale: 0.7 })
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+    function expressTime(time){
+        var msElapsed = Date.now() - time;
+        if (msElapsed<60000*1.5) return [(msElapsed/1000).toFixed(0), 'sec']
+        if (msElapsed<3600000*1.5) return [(msElapsed/60000).toFixed(0), 'min']
+        if (msElapsed<86400000*1.5) return [(msElapsed/3600000).toFixed(0), 'hrs']
+        else return [(msElapsed/86400000).toFixed(0), 'days']
+    }
+
+<!--document.getElementById('fly').addEventListener('click', function () {-->
+<!--// Fly to a random location by offsetting the point -74.50, 40-->
+<!--// by up to 5 degrees.-->
+
+window.setInterval(function() {
+
+    $.getJSON('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson',function(data) {
+        a = data.features[0].geometry.coordinates[0]
+        b = data.features[0].geometry.coordinates[1]
+        map.flyTo({
+            center: [
+                a, b]
+        });
+        marker2.setLngLat([a, b]).addTo(map);
+        popup
+            .setLngLat([a, b])
+            // .setHTML('<h3 class="fl mag">'+data.features[0].properties.title+'</h3>'+'</span>')
+            // .setHTML('<h1 class="fl mag">'+'M'+data.features[0].properties.mag+'</h1>'+data.features[0].properties.place+'<br><span class="italic block translucent">'+'</span>')
+            .setHTML('<h1 class="fl mag">'+'M'+data.features[0].properties.mag.toFixed(1)+'</h1>'+data.features[0].properties.place+'<br><span class="italic block translucent">'+'('+ expressTime(data.features[0].properties.time)[0]+' '+expressTime(data.features[0].properties.time)[1]+' ago)</span>')
+            .addTo(map);
+    });
+
+
+
+
+}, 10000);
+
+
+
+
+<!--});-->
+</script>
+
+</body>
+</html>
