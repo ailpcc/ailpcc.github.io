@@ -5,7 +5,7 @@
 	<meta name="Description" content="">
 	<title>Cheno MuMu | Cheno 慕慕</title>
 	<meta content="chenomumu cheno慕慕" name="keywords"/>
-	<meta name="description" content="Cheno慕慕的个人网页，请在管理员允许的情况下分享！Cheno MuMu	personal web page, please share it legally!">
+	<meta name="description" content="Cheno慕慕的个人网页，请在管理员允许的情况下分享！Cheno MuMu personal web page, please share it legally!">
 	<meta content="Cheno mumu | Cheno 慕慕" name="twitter:domain"/>
 	<meta content="Cheno mumu | Cheno 慕慕" name="twitter:app:name:iphone"/>
 	<meta content="Cheno mumu | Cheno 慕慕" name="twitter:app:name:ipad"/>
@@ -61,8 +61,17 @@
 	
 	<div id="life">
 		<p id="html_info"></p>
-		<p id="hitokoto"><a id="hitokoto_text"><span id="jinrishici-sentence">Loading...</span></p></a>
-<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		<p id="hitokoto"><a id="hitokoto_text"><span id="jinrishici-sentence">Loading...<img src="images/podd_sky_loading.gif" style="width:5%;height: 5%;"></span><br>&copy;Hitokoto  & &copy;Cheno</p></a>
+		<script>
+			fetch('https://international.v1.hitokoto.cn')
+			  .then(response => response.json())
+			  .then(data => {
+				const hitokoto = document.getElementById('hitokoto_text')
+				hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+				hitokoto.innerText = data.hitokoto
+			  })
+			  .catch(console.error)
+		  </script>
 		<div id="new">
 		<iframe src="blog/new.html" align="bottom" frameborder="0" scrolling="auto" width="100%" height="155px" style="float:top"></iframe>
 	</div>
