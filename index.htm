@@ -64,6 +64,7 @@
 		<p id="hitokoto"><a id="hitokoto_text"><span id="jinrishici-sentence">Loading...<img src="images/podd_sky_loading.gif" style="width:5%;height: 5%;"></span><br>&copy;Hitokoto  & &copy;Cheno</p></a>
 		<script>
 			fetch('https://international.v1.hitokoto.cn')
+			fetch('https://v1.hitokoto.cn')
 			  .then(response => response.json())
 			  .then(data => {
 				const hitokoto = document.getElementById('hitokoto_text')
